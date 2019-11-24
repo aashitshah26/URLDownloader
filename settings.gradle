@@ -1,0 +1,3 @@
+include ':app'
+include ':urldownloader'
+rootProject.name='Downloader'

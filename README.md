@@ -37,7 +37,7 @@ Initialize *URLDownloader* in your activity:
 ```java
 URLDownloader urlDownloader = new URLDownloader(this);
 urlDownloader.setDownload(url, downloadTitle, Environment.getExternalStorageDirectory().getPath());
-=urlDownloader.startDownload();  //Always call setDownload() before calling startDownload()
+urlDownloader.startDownload();  //Always call setDownload() before calling startDownload()
 ```
 
 Set callbacks for *URLDownloader* in your activity:

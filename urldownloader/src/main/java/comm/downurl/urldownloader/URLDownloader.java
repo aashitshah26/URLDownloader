@@ -53,7 +53,7 @@ public class URLDownloader {
             request.allowScanningByMediaScanner();
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
-            File file = new File(directory, downloadTitle);
+            File file = new File(directory);
             if (!file.exists()) {
                 file.mkdirs();
             }

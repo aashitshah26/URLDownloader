@@ -25,7 +25,7 @@ allprojects {
 Add dependency to your module `build.gradle`:
 
 ```gradle
-implementation 'com.github.aashitshah26:URLDownloader:1.0.0'
+implementation 'com.github.aashitshah26:URLDownloader:1.0.1'
 ```
 
 ## Usage

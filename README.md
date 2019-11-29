@@ -68,7 +68,13 @@ urlDownloader.setDownloadCallbacks(new URLDownloader.DownloadCallbacks() {
             public void onRunning(String downloadTitle) {
                 //Download Running
             }
+            
+            @Override
+            public void onCancelled(String downloadTitle){
+               //Download Cancelled
+            }
         });
+      
         
 ```
 

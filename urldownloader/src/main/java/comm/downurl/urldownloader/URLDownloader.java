@@ -29,6 +29,7 @@ public class URLDownloader {
         void onFailed(String downloadTitle);
         void onPaused(String downloadTitle);
         void onRunning(String downloadTitle);
+        void onCancelled(String downloadTitle);
     }
 
     public URLDownloader(Context context){
@@ -91,7 +92,7 @@ public class URLDownloader {
                     q.setFilterById(downloadId);
 
                     Cursor cursor = manager.query(q);
-                    cursor.moveToFirst();
+                    if(cursor.moveToFirst()){
                     int bytes_downloaded = cursor.getInt(cursor
                             .getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR));
                     int bytes_total = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES));
@@ -112,6 +113,11 @@ public class URLDownloader {
                     Log.e("progress",dl_progress+"");
 
                      statusMessage(cursor,downloadTitle,listener);
+                    }else{
+                          if(listener!=null){
+                           listener.onCancelled(downloadTitle);
+                          }
+                    }
 
                     cursor.close();
                 }

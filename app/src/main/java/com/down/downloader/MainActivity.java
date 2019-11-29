@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
             public void onRunning(String downloadTitle) {
                 //Download Running
             }
+            
+            @Override
+            public void onCancelled(String downloadTitle){
+               //Download Cancelled
+            }
         });
     }
 
